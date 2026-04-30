@@ -26,6 +26,12 @@
         {{ end }}
     </header>
     
+    {{ if .Params.image }}
+    <div class="post-featured-image">
+        <img src="{{ .Params.image }}" alt="{{ .Title }}" loading="lazy" />
+    </div>
+    {{ end }}
+    
     <div class="post-content">
         {{ .Content }}
     </div>

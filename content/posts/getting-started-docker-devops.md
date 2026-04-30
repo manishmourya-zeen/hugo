@@ -5,6 +5,7 @@ draft: false
 tags: ["docker", "devops", "containers"]
 author: "Your Name"
 description: "A comprehensive guide to Docker, containerization, and DevOps best practices."
+image: ""
 ---
 
 ## Introduction

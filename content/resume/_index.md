@@ -132,5 +132,7 @@ University Name, Graduation: 2018
 ---
 
 <div style="text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #e0e0e0;">
-<a href="/resume.pdf" style="display: inline-block; padding: 0.75rem 1.5rem; background-color: #000; color: #fff; text-decoration: none; border-radius: 3px; font-weight: 700;">📥 Download Full Resume (PDF)</a>
+<a href="/resume/resume.pdf" style="display: inline-block; padding: 0.75rem 1.5rem; background-color: #000; color: #fff; text-decoration: none; border-radius: 3px; font-weight: 700;">📥 Download Full Resume (PDF)</a>
 </div>
+
+

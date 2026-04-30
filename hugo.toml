@@ -6,13 +6,17 @@
 baseURL = "https://yourdomain.com/"
 language = "en-us"
 title = "Your Name - Developer Portfolio"
-theme = ""
+
 
 # Output Formats
 [outputs]
 home = ["HTML"]
 section = ["HTML", "RSS"]
 page = ["HTML"]
+
+# Markup Configuration
+[markup.goldmark.renderer]
+unsafe = true
 
 # Main Navigation Menu
 [[menu.main]]

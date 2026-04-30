@@ -5,33 +5,51 @@
     {{ .Content }}
     
     {{ if .Pages }}
-    <div class="posts-archive">
+    <div class="posts-grid">
         {{ range .Pages.ByPublishDate.Reverse }}
-        <article class="archive-item">
-            <div class="archive-header">
-                <h2 class="archive-item-title">
+        <article class="post-card">
+            {{ if .Params.image }}
+            <a href="{{ .Permalink }}" class="post-card-image-link">
+                <div class="post-card-image">
+                    <img src="{{ .Params.image }}" alt="{{ .Title }}" loading="lazy" />
+                </div>
+            </a>
+            {{ end }}
+            <div class="post-card-body">
+                <div class="post-card-meta">
+                    <time datetime="{{ .PublishDate.Format "2006-01-02" }}" class="post-card-date">
+                        {{ .PublishDate.Format "Jan 02, 2006" }}
+                    </time>
+                    {{ if .ReadingTime }}
+                    <span class="post-card-reading-time">{{ .ReadingTime }} min read</span>
+                    {{ end }}
+                </div>
+                <h2 class="post-card-title">
                     <a href="{{ .Permalink }}">{{ .Title }}</a>
                 </h2>
-                <time datetime="{{ .PublishDate.Format "2006-01-02" }}" class="archive-date">
-                    {{ .PublishDate.Format "Jan 02, 2006" }}
-                </time>
-            </div>
-            
-            {{ if .Summary }}
-            <p class="archive-summary">{{ .Summary }}</p>
-            {{ end }}
-            
-            {{ if .Params.tags }}
-            <div class="archive-tags">
-                {{ range .Params.tags }}
-                <a href="/tags/{{ . | urlize }}" class="tag-link">#{{ . }}</a>
+                
+                {{ if .Summary }}
+                <p class="post-card-summary">{{ .Summary | plainify | truncate 160 }}</p>
                 {{ end }}
+                
+                <div class="post-card-footer">
+                    {{ if .Params.tags }}
+                    <div class="post-card-tags">
+                        {{ range first 3 .Params.tags }}
+                        <a href="/tags/{{ . | urlize }}" class="tag-link">#{{ . }}</a>
+                        {{ end }}
+                    </div>
+                    {{ end }}
+                    
+                    <a href="{{ .Permalink }}" class="read-more">Read article →</a>
+                </div>
             </div>
-            {{ end }}
-            
-            <a href="{{ .Permalink }}" class="read-more">Read article →</a>
         </article>
         {{ end }}
+    </div>
+    {{ else }}
+    <div class="empty-state">
+        <p>No posts yet. Check back soon!</p>
     </div>
     {{ end }}
 </section>

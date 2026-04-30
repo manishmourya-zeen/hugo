@@ -5,6 +5,7 @@ draft: false
 tags: ["kubernetes", "devops", "deployment", "docker"]
 author: "Your Name"
 description: "Exploring different Kubernetes deployment strategies and their use cases."
+image: ""
 ---
 
 ## Overview
