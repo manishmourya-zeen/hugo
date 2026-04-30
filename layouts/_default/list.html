@@ -1,0 +1,38 @@
+{{ define "main" }}
+<section class="archive-section">
+    <h1 class="archive-title">{{ .Title }}</h1>
+    
+    {{ .Content }}
+    
+    {{ if .Pages }}
+    <div class="posts-archive">
+        {{ range .Pages.ByPublishDate.Reverse }}
+        <article class="archive-item">
+            <div class="archive-header">
+                <h2 class="archive-item-title">
+                    <a href="{{ .Permalink }}">{{ .Title }}</a>
+                </h2>
+                <time datetime="{{ .PublishDate.Format "2006-01-02" }}" class="archive-date">
+                    {{ .PublishDate.Format "Jan 02, 2006" }}
+                </time>
+            </div>
+            
+            {{ if .Summary }}
+            <p class="archive-summary">{{ .Summary }}</p>
+            {{ end }}
+            
+            {{ if .Params.tags }}
+            <div class="archive-tags">
+                {{ range .Params.tags }}
+                <a href="/tags/{{ . | urlize }}" class="tag-link">#{{ . }}</a>
+                {{ end }}
+            </div>
+            {{ end }}
+            
+            <a href="{{ .Permalink }}" class="read-more">Read article →</a>
+        </article>
+        {{ end }}
+    </div>
+    {{ end }}
+</section>
+{{ end }}

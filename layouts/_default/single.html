@@ -1,0 +1,50 @@
+{{ define "main" }}
+<article class="page-post">
+    <header class="page-header">
+        <h1 class="page-title">{{ .Title }}</h1>
+        
+        {{ if not (in (slice "resume" "findings") .Section) }}
+        <div class="post-metadata">
+            <time datetime="{{ .PublishDate.Format "2006-01-02" }}">
+                {{ .PublishDate.Format "January 2, 2006" }}
+            </time>
+            {{ if .Params.author }}
+            <span class="post-author">by {{ .Params.author }}</span>
+            {{ end }}
+            {{ if .ReadingTime }}
+            <span class="reading-time">{{ .ReadingTime }} min read</span>
+            {{ end }}
+        </div>
+        
+        {{ if .Params.tags }}
+        <div class="tags">
+            {{ range .Params.tags }}
+            <a href="/tags/{{ . | urlize }}" class="tag">#{{ . }}</a>
+            {{ end }}
+        </div>
+        {{ end }}
+        {{ end }}
+    </header>
+    
+    <div class="post-content">
+        {{ .Content }}
+    </div>
+    
+    {{ if not (in (slice "resume" "findings") .Section) }}
+    <footer class="post-footer">
+        <nav class="post-nav">
+            {{ if .PrevInSection }}
+            <a href="{{ .PrevInSection.Permalink }}" class="nav-prev">
+                ← {{ .PrevInSection.Title }}
+            </a>
+            {{ end }}
+            {{ if .NextInSection }}
+            <a href="{{ .NextInSection.Permalink }}" class="nav-next">
+                {{ .NextInSection.Title }} →
+            </a>
+            {{ end }}
+        </nav>
+    </footer>
+    {{ end }}
+</article>
+{{ end }}

@@ -1,0 +1,36 @@
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h4>{{ .Site.Params.author }}</h4>
+            <p>{{ .Site.Params.description }}</p>
+        </div>
+        
+        <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+                {{ range .Site.Menus.main }}
+                <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+                {{ end }}
+            </ul>
+        </div>
+        
+        <div class="footer-section">
+            <h4>Connect</h4>
+            <ul class="social-links">
+                {{ if .Site.Params.social.github }}
+                <li><a href="{{ .Site.Params.social.github }}" target="_blank">GitHub</a></li>
+                {{ end }}
+                {{ if .Site.Params.social.linkedin }}
+                <li><a href="{{ .Site.Params.social.linkedin }}" target="_blank">LinkedIn</a></li>
+                {{ end }}
+                {{ if .Site.Params.social.email }}
+                <li><a href="mailto:{{ .Site.Params.social.email }}">Email</a></li>
+                {{ end }}
+            </ul>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <p>&copy; {{ now.Year }} {{ .Site.Params.author }}. Built with <a href="https://gohugo.io">Hugo</a>.</p>
+    </div>
+</footer>

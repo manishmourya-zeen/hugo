@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A developer&#39;s portfolio and technical blog">
+    <meta name="keywords" content="developer, portfolio, devops, tech, blog">
+    <meta name="author" content="Devopsinfo">
+    <meta name="color-scheme" content="light">
+    
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Kubernetes">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="http://localhost:1313//images/og-image.png">
+    <meta property="og:url" content="http://localhost:1313/tags/kubernetes/">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <title>Kubernetes | Devopsinfo</title>
+    
+    
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" fetchpriority="low">
+    
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css" media="all">
+    
+    
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXXX-X"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-XXXXXXXXX-X');
+    </script>
+    
+</head>
+<body>
+    <header class="header">
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="/">Devopsinfo</a>
+            </div>
+            
+            <ul class="nav-menu">
+                
+                <li class="nav-item">
+                    <a href="/" class="nav-link">
+                        Home
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/posts/" class="nav-link">
+                        Posts
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/resume/" class="nav-link">
+                        Resume
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/findings/" class="nav-link">
+                        Findings
+                    </a>
+                </li>
+                
+            </ul>
+            
+            <div class="nav-social">
+                
+                <a href="https://github.com/yourusername" target="_blank" rel="noopener" title="GitHub">GH</a>
+                
+                
+                <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener" title="LinkedIn">LI</a>
+                
+                
+                <a href="https://twitter.com/yourusername" target="_blank" rel="noopener" title="Twitter">TW</a>
+                
+            </div>
+        </div>
+    </nav>
+</header>
+
+    
+    <main id="main" class="container" role="main">
+        
+<section class="archive-section">
+    <h1 class="archive-title">Kubernetes</h1>
+    
+    
+    
+    
+    <div class="posts-archive">
+        
+        <article class="archive-item">
+            <div class="archive-header">
+                <h2 class="archive-item-title">
+                    <a href="http://localhost:1313/posts/kubernetes-deployment-strategies/">Kubernetes Deployment Strategies</a>
+                </h2>
+                <time datetime="2026-04-25" class="archive-date">
+                    Apr 25, 2026
+                </time>
+            </div>
+            
+            
+            <p class="archive-summary"><h2 id="overview">Overview</h2>
+<p>Kubernetes provides multiple deployment strategies to update applications with zero downtime and risk mitigation. This guide covers the most common approaches.</p>
+<h2 id="1-rolling-update-default">1. Rolling Update (Default)</h2>
+<p>Gradually replaces old pods with new ones.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">apps/v1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Deployment</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">myapp</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">spec</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">replicas</span>: <span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">strategy</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">type</span>: <span style="color:#ae81ff">RollingUpdate</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">rollingUpdate</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">maxSurge</span>: <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">maxUnavailable</span>: <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">selector</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">matchLabels</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">app</span>: <span style="color:#ae81ff">myapp</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">template</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">labels</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">app</span>: <span style="color:#ae81ff">myapp</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">spec</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">containers</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">myapp</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">image</span>: <span style="color:#ae81ff">myapp:v2</span>
+</span></span></code></pre></div><p><strong>Pros:</strong> No downtime, gradual rollout<br>
+<strong>Cons:</strong> Takes longer, version mixing during update</p>
+<h2 id="2-blue-green-deployment">2. Blue-Green Deployment</h2>
+<p>Run two identical production environments (blue and green).</p></p>
+            
+            
+            
+            <div class="archive-tags">
+                
+                <a href="/tags/kubernetes" class="tag-link">#kubernetes</a>
+                
+                <a href="/tags/devops" class="tag-link">#devops</a>
+                
+                <a href="/tags/deployment" class="tag-link">#deployment</a>
+                
+                <a href="/tags/docker" class="tag-link">#docker</a>
+                
+            </div>
+            
+            
+            <a href="http://localhost:1313/posts/kubernetes-deployment-strategies/" class="read-more">Read article →</a>
+        </article>
+        
+    </div>
+    
+</section>
+
+    </main>
+    
+    <footer class="footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h4>Devopsinfo</h4>
+            <p>A developer&#39;s portfolio and technical blog</p>
+        </div>
+        
+        <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+                
+                <li><a href="/">Home</a></li>
+                
+                <li><a href="/posts/">Posts</a></li>
+                
+                <li><a href="/resume/">Resume</a></li>
+                
+                <li><a href="/findings/">Findings</a></li>
+                
+            </ul>
+        </div>
+        
+        <div class="footer-section">
+            <h4>Connect</h4>
+            <ul class="social-links">
+                
+                <li><a href="https://github.com/yourusername" target="_blank">GitHub</a></li>
+                
+                
+                <li><a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a></li>
+                
+                
+                <li><a href="mailto:your.email@example.com">Email</a></li>
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <p>&copy; 2026 Devopsinfo. Built with <a href="https://gohugo.io">Hugo</a>.</p>
+    </div>
+</footer>
+
+</body>
+</html>

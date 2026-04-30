@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1314&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A developer&#39;s portfolio and technical blog">
+    <meta name="keywords" content="developer, portfolio, tech, blog">
+    <meta name="author" content="Your Name">
+    
+    
+    <meta property="og:title" content="Getting Started with Docker and DevOps">
+    <meta property="og:description" content="This is a sample blog post to demonstrate the structure and styling of your portfolio.
+Introduction
+Docker has revolutionized how we approach application deployment and infrastructure management. In this article, we&rsquo;ll explore the basics and best practices.
+Key Concepts
+Containerization
+Containers package your application with all its dependencies, ensuring consistency across environments.
+FROM golang:1.21
+WORKDIR /app
+COPY . .
+RUN go build -o myapp
+EXPOSE 8080
+CMD [&#34;./myapp&#34;]
+Docker Compose
+For multi-container applications, Docker Compose simplifies orchestration:">
+    <meta property="og:image" content="http://localhost:1314//images/og-image.png">
+    <meta property="og:url" content="http://localhost:1314/blog/docker-devops-guide/">
+    
+    <title>Getting Started with Docker and DevOps | Your Name - Developer Portfolio</title>
+    
+    
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    
+    
+    <style>ZgotmplZ</style>
+    
+    
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXXX-X"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-XXXXXXXXX-X');
+    </script>
+    
+</head>
+<body>
+    <header class="header">
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="/">Your Name</a>
+            </div>
+            
+            <ul class="nav-menu">
+                
+                <li class="nav-item">
+                    <a href="/" class="nav-link">
+                        Home
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/blog/" class="nav-link">
+                        Blog
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/resume/" class="nav-link">
+                        Resume
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/findings/" class="nav-link">
+                        Findings
+                    </a>
+                </li>
+                
+            </ul>
+            
+            <div class="nav-social">
+                
+                <a href="https://github.com/yourusername" target="_blank" rel="noopener" title="GitHub">GH</a>
+                
+                
+                <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener" title="LinkedIn">LI</a>
+                
+                
+                <a href="https://twitter.com/yourusername" target="_blank" rel="noopener" title="Twitter">TW</a>
+                
+            </div>
+        </div>
+    </nav>
+</header>
+
+    
+    <main class="container">
+        
+<article class="single-post">
+    <header class="post-header">
+        <h1 class="post-title">Getting Started with Docker and DevOps</h1>
+        
+        <div class="post-meta">
+            <time datetime="2026-04-28">
+                April 28, 2026
+            </time>
+            
+            <span class="post-author">by Your Name</span>
+            
+            
+            <span class="reading-time">1 min read</span>
+            
+        </div>
+        
+        
+        <div class="post-tags">
+            
+            <a href="/tags/docker" class="tag">#docker</a>
+            
+            <a href="/tags/devops" class="tag">#devops</a>
+            
+            <a href="/tags/containers" class="tag">#containers</a>
+            
+        </div>
+        
+    </header>
+    
+    <div class="post-content">
+        <p>This is a sample blog post to demonstrate the structure and styling of your portfolio.</p>
+<h2 id="introduction">Introduction</h2>
+<p>Docker has revolutionized how we approach application deployment and infrastructure management. In this article, we&rsquo;ll explore the basics and best practices.</p>
+<h2 id="key-concepts">Key Concepts</h2>
+<h3 id="containerization">Containerization</h3>
+<p>Containers package your application with all its dependencies, ensuring consistency across environments.</p>
+<div class="highlight"><pre tabindex="0" style="color:#ccc;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span><span style="color:#cdcd00">FROM</span> <span style="color:#cd0000">golang:1.21</span><span style="">
+</span></span></span><span style="display:flex;"><span><span style="color:#cdcd00">WORKDIR</span> <span style="color:#cd0000">/app</span><span style="">
+</span></span></span><span style="display:flex;"><span><span style="color:#cdcd00">COPY</span> . .<span style="">
+</span></span></span><span style="display:flex;"><span><span style="color:#cdcd00">RUN</span> go build -o myapp<span style="">
+</span></span></span><span style="display:flex;"><span><span style="color:#cdcd00">EXPOSE</span> <span style="color:#cd0000">8080</span><span style="">
+</span></span></span><span style="display:flex;"><span><span style="color:#cdcd00">CMD</span> [<span style="color:#cd0000">&#34;./myapp&#34;</span>]<span style="">
+</span></span></span></code></pre></div><h3 id="docker-compose">Docker Compose</h3>
+<p>For multi-container applications, Docker Compose simplifies orchestration:</p>
+<div class="highlight"><pre tabindex="0" style="color:#ccc;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>version: <span style="color:#cd0000">&#39;3.8&#39;</span>
+</span></span><span style="display:flex;"><span>services:
+</span></span><span style="display:flex;"><span>  web:
+</span></span><span style="display:flex;"><span>    build: .
+</span></span><span style="display:flex;"><span>    ports:
+</span></span><span style="display:flex;"><span>      - <span style="color:#cd0000">&#34;8080:8080&#34;</span>
+</span></span><span style="display:flex;"><span>  db:
+</span></span><span style="display:flex;"><span>    image: postgres:15
+</span></span><span style="display:flex;"><span>    environment:
+</span></span><span style="display:flex;"><span>      POSTGRES_PASSWORD: secret
+</span></span></code></pre></div><h2 id="best-practices">Best Practices</h2>
+<ul>
+<li>Keep images small and lean</li>
+<li>Use multi-stage builds for optimized images</li>
+<li>Implement proper logging and monitoring</li>
+<li>Never run containers as root</li>
+<li>Tag images with semantic versioning</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>Docker is essential for modern DevOps workflows. Start small, experiment, and gradually integrate it into your pipeline.</p>
+<hr>
+<p><strong>Interested in learning more?</strong> Check out the <a href="https://docs.docker.com/">official Docker documentation</a>.</p>
+
+    </div>
+    
+    <footer class="post-footer">
+        <div class="post-navigation">
+            
+            
+        </div>
+    </footer>
+</article>
+
+    </main>
+    
+    <footer class="footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h4>Your Name</h4>
+            <p>A developer&#39;s portfolio and technical blog</p>
+        </div>
+        
+        <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+                
+                <li><a href="/">Home</a></li>
+                
+                <li><a href="/blog/">Blog</a></li>
+                
+                <li><a href="/resume/">Resume</a></li>
+                
+                <li><a href="/findings/">Findings</a></li>
+                
+            </ul>
+        </div>
+        
+        <div class="footer-section">
+            <h4>Connect</h4>
+            <ul class="social-links">
+                
+                <li><a href="https://github.com/yourusername" target="_blank">GitHub</a></li>
+                
+                
+                <li><a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a></li>
+                
+                
+                <li><a href="mailto:your.email@example.com">Email</a></li>
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <p>&copy; 2026 Your Name. Built with <a href="https://gohugo.io">Hugo</a>.</p>
+    </div>
+</footer>
+
+</body>
+</html>
