@@ -18,6 +18,10 @@ page = ["HTML"]
 [markup.goldmark.renderer]
 unsafe = true
 
+# URL Structure
+[permalinks]
+posts = "/:slug/"
+
 # Main Navigation Menu
 [[menu.main]]
 name = "Home"

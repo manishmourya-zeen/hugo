@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Automation on Your Name - Developer Portfolio</title>
+    <link>http://localhost:1313/tags/automation/</link>
+    <description>Recent content in Automation on Your Name - Developer Portfolio</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 30 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/automation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Getting Started with Jenkins: CI/CD Pipeline Automation</title>
+      <link>http://localhost:1313/posts/sample-post/</link>
+      <pubDate>Thu, 30 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/sample-post/</guid>
+      <description>&lt;h2 id=&#34;what-is-jenkins&#34;&gt;What is Jenkins?&lt;/h2&gt;&#xA;&lt;p&gt;Jenkins is an open-source automation server that helps developers build, test, and deploy software continuously. It&amp;rsquo;s one of the most widely adopted tools in the DevOps ecosystem, powering CI/CD pipelines for teams of all sizes.&lt;/p&gt;&#xA;&lt;h3 id=&#34;why-jenkins&#34;&gt;Why Jenkins?&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Open Source&lt;/strong&gt; — Free, community-driven, and battle-tested since 2011&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Plugin Ecosystem&lt;/strong&gt; — 1,800+ plugins for virtually any integration&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Pipeline as Code&lt;/strong&gt; — Define your entire build pipeline in a &lt;code&gt;Jenkinsfile&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Distributed Builds&lt;/strong&gt; — Scale across multiple agents/nodes&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Language Agnostic&lt;/strong&gt; — Works with Java, Python, Go, Node.js, and more&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;installation&#34;&gt;Installation&lt;/h2&gt;&#xA;&lt;h3 id=&#34;using-docker-recommended&#34;&gt;Using Docker (Recommended)&lt;/h3&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker run -d &lt;span style=&#34;color:#ae81ff&#34;&gt;\&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  --name jenkins &lt;span style=&#34;color:#ae81ff&#34;&gt;\&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  -p 8080:8080 &lt;span style=&#34;color:#ae81ff&#34;&gt;\&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  -p 50000:50000 &lt;span style=&#34;color:#ae81ff&#34;&gt;\&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  -v jenkins_home:/var/jenkins_home &lt;span style=&#34;color:#ae81ff&#34;&gt;\&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  jenkins/jenkins:lts&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Retrieve the initial admin password:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
