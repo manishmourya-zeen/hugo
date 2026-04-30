@@ -57,14 +57,23 @@
     <script>
     (function() {
         var toggle = document.getElementById('themeToggle');
-        if (!toggle) return;
-        toggle.addEventListener('click', function() {
-            var html = document.documentElement;
-            var current = html.getAttribute('data-theme');
-            var next = current === 'dark' ? 'light' : 'dark';
-            html.setAttribute('data-theme', next);
-            localStorage.setItem('theme', next);
-        });
+        if (toggle) {
+            toggle.addEventListener('click', function() {
+                var html = document.documentElement;
+                var current = html.getAttribute('data-theme');
+                var next = current === 'dark' ? 'light' : 'dark';
+                html.setAttribute('data-theme', next);
+                localStorage.setItem('theme', next);
+            });
+        }
+
+        var menuToggle = document.getElementById('menuToggle');
+        var navMenu = document.querySelector('.nav-menu');
+        if (menuToggle && navMenu) {
+            menuToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('is-active');
+            });
+        }
     })();
     </script>
 

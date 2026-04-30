@@ -2,4 +2,59 @@
 <section class="hero-section">
     {{ .Content }}
 </section>
+
+{{ $recentPosts := where .Site.RegularPages "Section" "posts" }}
+{{ $recentPosts = first 3 $recentPosts }}
+
+{{ if $recentPosts }}
+<section class="archive-section" style="margin-top: var(--spacing-xl);">
+    <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: var(--spacing-lg);">
+        <h2 class="archive-title" style="margin-bottom: 0; border: none; padding: 0;">Recent Posts</h2>
+        <a href="/posts/" class="read-more" style="font-size: 0.9rem;">View all posts →</a>
+    </div>
+    
+    <div class="posts-grid">
+        {{ range $recentPosts }}
+        <article class="post-card">
+            {{ if .Params.image }}
+            <a href="{{ .Permalink }}" class="post-card-image-link">
+                <div class="post-card-image">
+                    <img src="{{ .Params.image }}" alt="{{ .Title }}" loading="lazy" />
+                </div>
+            </a>
+            {{ end }}
+            <div class="post-card-body">
+                <div class="post-card-meta">
+                    <time datetime="{{ .PublishDate.Format "2006-01-02" }}" class="post-card-date">
+                        {{ .PublishDate.Format "Jan 02, 2006" }}
+                    </time>
+                    {{ if .ReadingTime }}
+                    <span class="post-card-reading-time">{{ .ReadingTime }} min read</span>
+                    {{ end }}
+                </div>
+                <h3 class="post-card-title" style="margin-top: 0;">
+                    <a href="{{ .Permalink }}">{{ .Title }}</a>
+                </h3>
+                
+                {{ if .Summary }}
+                <p class="post-card-summary">{{ .Summary | plainify | truncate 160 }}</p>
+                {{ end }}
+                
+                <div class="post-card-footer">
+                    {{ if .Params.tags }}
+                    <div class="post-card-tags">
+                        {{ range first 3 .Params.tags }}
+                        <a href="/tags/{{ . | urlize }}" class="tag-link">#{{ . }}</a>
+                        {{ end }}
+                    </div>
+                    {{ end }}
+                    
+                    <a href="{{ .Permalink }}" class="read-more">Read article →</a>
+                </div>
+            </div>
+        </article>
+        {{ end }}
+    </div>
+</section>
+{{ end }}
 {{ end }}
