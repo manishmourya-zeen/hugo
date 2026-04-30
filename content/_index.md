@@ -47,10 +47,9 @@ Tools:        Git • Jenkins • GitHub Actions • Linux
 
 Feel free to reach out through any of these channels:
 
-- **GitHub:** [github.com/yourusername](https://github.com/yourusername)
-- **LinkedIn:** [linkedin.com/in/yourusername](https://linkedin.com/in/yourusername)  
-- **Email:** your.email@example.com
-- **Twitter:** [@yourusername](https://twitter.com/yourusername)
+- **GitHub:** [{{< param "social.github" >}}]({{< param "social.github" >}})
+- **LinkedIn:** [{{< param "social.linkedin" >}}]({{< param "social.linkedin" >}})
+- **Email:** {{< param "social.email" >}}
 
 ---
 

@@ -54,11 +54,11 @@ keywords = "developer, portfolio, devops, tech, blog"
 github = "https://github.com/m4nihere"
 linkedin = "https://linkedin.com/in/manish-kumar-mourya"
 #twitter = "https://twitter.com/yourusername"
-email = "[EMAIL_ADDRESS]"
+email = "manish@devopsinfo.in"
 
 # Analytics Configuration
-[params.analytics]                                      
-#googleAnalyticsID = "UA-XXXXXXXXX-X"
+[params.analytics]
+googleAnalyticsID = "UA-XXXXXXXXX-X"
 enableComments = false
 
 # SEO Configuration
