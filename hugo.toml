@@ -63,8 +63,8 @@ enableComments = false
 
 # SEO Configuration
 [params.seo]
-siteName = "Your Portfolio"
-siteImage = "/images/og-image.png"
+siteName = "Devopsinfo"
+siteImage = "/favicon.png"
 
 # Resume Configuration
 [params.resume]
